@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
+import Cart
 
 
 type Msg
@@ -8,17 +9,17 @@ type Msg
 
 
 type alias Model =
-    Int
+    Cart.Cart
 
 
-view : Int -> Html Msg
+view : Model -> Html Msg
 view model =
-    text "Hello!"
+    text <| "Cart total is: " ++ (model |> Cart.total |> toString)
 
 
 init : ( Model, Cmd Msg )
 init =
-    123 ! []
+    Cart.empty ! []
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -26,7 +27,7 @@ update msg model =
     model ! []
 
 
-main : Program Never Int Msg
+main : Program Never Model Msg
 main =
     Html.program
         { init = init

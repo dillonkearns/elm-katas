@@ -4,7 +4,8 @@
   "description": "A store front kata",
   "scripts": {
     "start": "elm-live src/Main.elm --open --output elm.js",
-    "test": "elm test"
+    "test": "elm test",
+    "test": "elm test --watch"
   },
   "main": "index.js",
   "repository": "https://github.com/dillonkearns/trek-tech-kata",
