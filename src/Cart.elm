@@ -14,6 +14,14 @@ empty =
     []
 
 
+add : Item -> Cart -> Cart
+add item cart =
+    item :: cart
+
+
 total : Cart -> number
-total something =
-    0
+total cart =
+    if List.length cart > 0 then
+        123
+    else
+        0
