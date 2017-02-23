@@ -6,7 +6,7 @@ type alias Cart =
 
 
 type alias Item =
-    { name : String, cost : Int }
+    { name : String, cost : Int, imageUrl : String }
 
 
 empty : Cart

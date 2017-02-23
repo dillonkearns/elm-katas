@@ -30,7 +30,7 @@ viewInventory inventory =
 
 viewInventoryItem : Cart.Item -> Html Msg
 viewInventoryItem item =
-    div [] [ text item.name, viewCost item.cost, viewInventoryImage ]
+    div [] [ text item.name, viewCost item.cost, viewInventoryImage item.imageUrl ]
 
 
 quatlooBadge : Html Msg
@@ -38,9 +38,9 @@ quatlooBadge =
     img [ src "./assets/quatloo.png", style [ ( "max-width", "10px" ), ( "padding-left", "3px" ), ( "padding-right", "3px" ) ] ] []
 
 
-viewInventoryImage : Html Msg
-viewInventoryImage =
-    img [ src "./assets/products/tos/phaser.jpg", style [ ( "max-width", "100px" ) ] ] []
+viewInventoryImage : String -> Html Msg
+viewInventoryImage imageUrl =
+    img [ src imageUrl, style [ ( "max-width", "100px" ) ] ] []
 
 
 viewCost : Int -> Html Msg
@@ -58,7 +58,12 @@ view model =
 
 inventory : List Cart.Item
 inventory =
-    [ Cart.Item "Phaser" 456 ]
+    [ Cart.Item "Phaser" 6200 "./assets/products/tos/phaser.jpg"
+    , Cart.Item "Tricorder" 10000 "./assets/products/tos/tricorder.png"
+    , Cart.Item "Tricorder" 15000 "./assets/products/tng/tricorder.png"
+    , Cart.Item "Communicator" 500 "./assets/products/tos/communicator.jpg"
+    , Cart.Item "Communicator" 1200 "./assets/products/tng/communicator.jpeg"
+    ]
 
 
 init : ( Model, Cmd Msg )

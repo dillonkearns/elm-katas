@@ -8,7 +8,7 @@ There is a failing test for discounts, summing a cart
 
 Modules:
 * Cart - sum together all the items
-* Discount?
+* Discount
 * Inventory - decode
 
 Challenges:
