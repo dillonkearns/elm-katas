@@ -1,0 +1,9 @@
+{
+  "name": "trek-tech",
+  "version": "1.0.0",
+  "description": "A store front kata",
+  "main": "index.js",
+  "repository": "https://github.com/dillonkearns/trek-tech-kata",
+  "author": "Dillon Kearns <dillon@dillonkearns.com>",
+  "license": "MIT"
+}
