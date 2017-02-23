@@ -2,8 +2,17 @@
   "name": "trek-tech",
   "version": "1.0.0",
   "description": "A store front kata",
+  "scripts": {
+    "start": "elm-live src/Main.elm --open --output elm.js",
+    "test": "elm test"
+  },
   "main": "index.js",
   "repository": "https://github.com/dillonkearns/trek-tech-kata",
   "author": "Dillon Kearns <dillon@dillonkearns.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "elm": "^0.18.0",
+    "elm-live": "^2.7.4",
+    "elm-test": "^0.18.2"
+  }
 }
