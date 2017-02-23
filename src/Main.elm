@@ -30,12 +30,17 @@ viewInventory inventory =
 
 viewInventoryItem : Cart.Item -> Html Msg
 viewInventoryItem item =
-    div [] [ text item.name, viewCost item.cost ]
+    div [] [ text item.name, viewCost item.cost, viewInventoryImage ]
 
 
 quatlooBadge : Html Msg
 quatlooBadge =
     img [ src "./assets/quatloo.png", style [ ( "max-width", "10px" ), ( "padding-left", "3px" ), ( "padding-right", "3px" ) ] ] []
+
+
+viewInventoryImage : Html Msg
+viewInventoryImage =
+    img [ src "./assets/products/tos/phaser.jpg", style [ ( "max-width", "100px" ) ] ] []
 
 
 viewCost : Int -> Html Msg
