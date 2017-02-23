@@ -1,12 +1,15 @@
 module Main exposing (main)
 
+import Array
+import Cart
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Cart
+import Html.Events
 
 
 type Msg
     = NoOp
+    | AddItem Int
 
 
 type alias Model =
@@ -24,13 +27,13 @@ viewInventory : List Cart.Item -> Html Msg
 viewInventory inventory =
     div []
         [ h1 [] [ text "Inventory" ]
-        , ul [] (List.map viewInventoryItem inventory)
+        , div [] (List.indexedMap viewInventoryItem inventory)
         ]
 
 
-viewInventoryItem : Cart.Item -> Html Msg
-viewInventoryItem item =
-    div [] [ text item.name, viewCost item.cost, viewInventoryImage item.imageUrl ]
+viewInventoryItem : Int -> Cart.Item -> Html Msg
+viewInventoryItem index item =
+    div [ Html.Events.onClick (AddItem index) ] [ text item.name, viewCost item.cost, viewInventoryImage item.imageUrl ]
 
 
 quatlooBadge : Html Msg
@@ -52,6 +55,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ div [] [ viewInventory model.inventory ]
+        , text (toString model.cart)
         , div [] [ viewCartTotal model.cart ]
         ]
 
@@ -73,7 +77,28 @@ init =
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    model ! []
+    case msg of
+        AddItem index ->
+            let
+                maybeItemToAdd =
+                    Array.fromList inventory
+                        |> Array.get index
+
+                itemToAdd =
+                    case maybeItemToAdd of
+                        Just item ->
+                            item
+
+                        Nothing ->
+                            Debug.crash "No item at index"
+
+                updatedCart =
+                    model.cart ++ [ itemToAdd ]
+            in
+                { model | cart = updatedCart } ! []
+
+        NoOp ->
+            model ! []
 
 
 main : Program Never Model Msg
