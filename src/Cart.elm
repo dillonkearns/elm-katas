@@ -19,9 +19,15 @@ add item cart =
     item :: cart
 
 
-total : Cart -> number
+total : Cart -> Int
 total cart =
-    if List.length cart > 0 then
-        123
-    else
-        0
+    List.map .cost cart |> List.sum
+
+
+
+-- case List.head cart of
+--     Nothing ->
+--         0
+--
+--     Just x ->
+--         x.cost

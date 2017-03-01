@@ -15,7 +15,27 @@ all =
             \() ->
                 let
                     phaser =
-                        Cart.Item "Phaser" 123
+                        Cart.Item "Phaser" 123 ""
                 in
                     Expect.equal (Cart.empty |> Cart.add phaser |> Cart.total) 123
+        , test "Cart has correct total" <|
+            \() ->
+                let
+                    bloodWine =
+                        Cart.Item "Blood Wine" 1 ""
+                in
+                    Expect.equal (Cart.empty |> Cart.add bloodWine |> Cart.total) 1
+        , test "Cart with two items has total same as items" <|
+            \() ->
+                let
+                    ale =
+                        Cart.Item "Romulin Ale" 5 ""
+
+                    phaser =
+                        Cart.Item "Phaser" 3 ""
+
+                    cart =
+                        Cart.empty |> Cart.add ale |> Cart.add phaser
+                in
+                    Expect.equal (Cart.total cart) 8
         ]
