@@ -7,8 +7,10 @@ import Tennis
 
 all : Test
 all =
-    describe "Cart Tests"
-        [ test "Empty cart has total of 0" <|
+    describe "Tennis Tests"
+        [ test "new game" <|
             \() ->
-                Expect.equal Tennis.something 123
+                Tennis.init
+                    |> Tennis.score
+                    |> Expect.equal "Love-Love"
         ]
