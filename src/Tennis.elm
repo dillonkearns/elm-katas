@@ -1,16 +1,15 @@
 module Tennis exposing (..)
 
 
-init : Int
+type alias Game =
+    Int
+
+
+init : Game
 init =
     0
 
 
-score : Int -> String
+score : Game -> String
 score game =
     "Love-Love"
-
-
-something : Int
-something =
-    123

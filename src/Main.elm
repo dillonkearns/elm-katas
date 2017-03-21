@@ -13,18 +13,18 @@ type Msg
 
 
 type alias Model =
-    Int
+    Tennis.Game
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ text (toString model) ]
+        [ text (Tennis.score model) ]
 
 
 init : ( Model, Cmd Msg )
 init =
-    Tennis.something ! []
+    Tennis.init ! []
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
