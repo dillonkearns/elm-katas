@@ -5,7 +5,7 @@
   "scripts": {
     "start": "elm-live src/Main.elm --open --output elm.js",
     "test": "elm test",
-    "test": "elm test --watch"
+    "test-watch": "yarn test; fswatch -0 src tests -e '.*' -i \\.elm$ | xargs -0 -n1 -I{} yarn test"
   },
   "main": "index.js",
   "repository": "https://github.com/dillonkearns/trek-tech-kata",
