@@ -1,9 +1,9 @@
 module Tests exposing (..)
 
 import TennisTests
-import Test exposing (Test, describe)
+import Test exposing (Test)
 
 
 all : Test
 all =
-    describe "" [ TennisTests.all ]
+    TennisTests.all

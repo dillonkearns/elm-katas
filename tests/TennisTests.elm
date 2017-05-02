@@ -7,7 +7,7 @@ import Tennis
 
 all : Test
 all =
-    describe "Tennis Tests"
+    describe "Tennis"
         [ test "new game" <|
             \() ->
                 Tennis.init

@@ -1,17 +1,17 @@
 {
-  "name": "trek-tech",
+  "name": "elm-katas",
   "version": "1.0.0",
-  "description": "A store front kata",
+  "description": "Elm Katas",
   "scripts": {
-    "start": "elm-live src/Main.elm --open --output elm.js",
+    "start": "elm-live src/Main.elm --open --debug --output elm.js",
     "test": "elm test",
-    "test-watch": "yarn test; fswatch -0 src tests -e '.*' -i \\.elm$ | xargs -0 -n1 -I{} yarn test"
+    "test-watch": "npm test; fswatch -0 src tests -e '.*' -i \\.elm$ | xargs -0 -n1 -I{} npm test"
   },
   "main": "index.js",
-  "repository": "https://github.com/dillonkearns/trek-tech-kata",
+  "repository": "https://github.com/dillonkearns/elm-katas",
   "author": "Dillon Kearns <dillon@dillonkearns.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "elm": "^0.18.0",
     "elm-live": "^2.7.4",
     "elm-test": "^0.18.2"
