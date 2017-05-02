@@ -4,10 +4,6 @@ import Tennis
 import Html exposing (..)
 
 
--- import Html.Attributes exposing (..)
--- import Html.Events exposing (onClick)
-
-
 type Msg
     = NoOp
 
