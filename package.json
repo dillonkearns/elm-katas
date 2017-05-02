@@ -4,7 +4,7 @@
   "description": "Elm Katas",
   "scripts": {
     "start": "elm-live src/Main.elm --open --debug --output elm.js",
-    "test": "elm test",
+    "test": "elm-test",
     "test-watch": "npm test; fswatch -0 src tests -e '.*' -i \\.elm$ | xargs -0 -n1 -I{} npm test"
   },
   "main": "index.js",
