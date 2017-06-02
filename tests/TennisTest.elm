@@ -1,12 +1,12 @@
-module TennisTests exposing (all)
+module TennisTest exposing (..)
 
-import Test exposing (..)
 import Expect
 import Tennis
+import Test exposing (..)
 
 
-all : Test
-all =
+suite : Test
+suite =
     describe "Tennis"
         [ test "new game" <|
             \() ->
