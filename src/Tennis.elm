@@ -10,6 +10,6 @@ init =
     0
 
 
-score : Game -> String
-score game =
+scoreToString : Game -> String
+scoreToString game =
     "Love-Love"

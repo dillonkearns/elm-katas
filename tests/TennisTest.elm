@@ -11,6 +11,6 @@ suite =
         [ test "new game" <|
             \() ->
                 Tennis.init
-                    |> Tennis.score
+                    |> Tennis.scoreToString
                     |> Expect.equal "Love-Love"
         ]

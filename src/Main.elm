@@ -15,7 +15,7 @@ type alias Model =
 view : Model -> Html Msg
 view model =
     div []
-        [ text (Tennis.score model) ]
+        [ text (Tennis.scoreToString model) ]
 
 
 init : ( Model, Cmd Msg )
