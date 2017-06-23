@@ -1,7 +1,7 @@
 module Main exposing (main)
 
-import Tennis
 import Html exposing (..)
+import Tennis
 
 
 type Msg
@@ -18,23 +18,22 @@ view model =
         [ text (Tennis.scoreToString model) ]
 
 
-init : ( Model, Cmd Msg )
+init : Model
 init =
-    Tennis.init ! []
+    Tennis.init
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> Model
 update msg model =
     case msg of
         NoOp ->
-            model ! []
+            model
 
 
 main : Program Never Model Msg
 main =
-    Html.program
-        { init = init
+    Html.beginnerProgram
+        { model = init
         , update = update
-        , subscriptions = \_ -> Sub.none
         , view = view
         }
