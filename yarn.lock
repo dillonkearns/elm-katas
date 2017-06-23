@@ -850,9 +850,9 @@ elm-live@^2.7.4:
     indent-string "^3.0.0"
     q-stream "^0.2.0"
 
-elm-test@^0.18.4:
-  version "0.18.4"
-  resolved "https://registry.yarnpkg.com/elm-test/-/elm-test-0.18.4.tgz#8fdc6bc62790e63152eb41dd4260ea437dff5a09"
+elm-test@^0.18.6:
+  version "0.18.6"
+  resolved "https://registry.yarnpkg.com/elm-test/-/elm-test-0.18.6.tgz#975e6802bb7a6d92c0767034f54ec3e9826e78cf"
   dependencies:
     binstall "1.2.0"
     chalk "1.1.3"
@@ -2137,7 +2137,7 @@ read-pkg@^1.0.0:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.6:
+readable-stream@^2.0.0, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.6:
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.10.tgz#effe72bb7c884c0dd335e2379d526196d9d011ee"
   dependencies:
@@ -2149,7 +2149,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@~2.0.0, readable-stream@~2.0.5:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@~2.0.0, readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:

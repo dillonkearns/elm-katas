@@ -14,6 +14,6 @@
   "devDependencies": {
     "elm": "^0.18.0",
     "elm-live": "^2.7.4",
-    "elm-test": "^0.18.4"
+    "elm-test": "^0.18.6"
   }
 }
