@@ -1,4 +1,4 @@
-module TennisTest exposing (..)
+module TennisTest exposing (suite)
 
 import Expect
 import Tennis
