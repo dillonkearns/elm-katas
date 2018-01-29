@@ -13,4 +13,10 @@ suite =
                 Tennis.init
                     |> Tennis.scoreToString
                     |> Expect.equal "Love-Love"
+        , test "player 1 scores" <|
+            \_ ->
+                Tennis.init
+                    |> Tennis.player1Scores
+                    |> Tennis.scoreToString
+                    |> Expect.equal "15-Love"
         ]
