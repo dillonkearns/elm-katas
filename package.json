@@ -13,6 +13,6 @@
   "license": "MIT",
   "devDependencies": {
     "elm-live": "^2.7.4",
-    "elm-test": "^0.18.7"
+    "elm-test": "^0.18.12"
   }
 }
