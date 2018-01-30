@@ -4,6 +4,8 @@
   "description": "Elm Katas",
   "scripts": {
     "start": "elm-live src/Main.elm --open --debug",
+    "view": "elm-live src/StaticView.elm --open --debug",
+    "advanced": "elm-live src/AdvancedProgram.elm --open --debug",
     "test": "elm-test",
     "test-watch": "elm-test --watch"
   },

@@ -1,7 +1,6 @@
 module Main exposing (main)
 
 import Html exposing (..)
-import StaticView
 
 
 type Msg
@@ -14,7 +13,7 @@ type alias Model =
 
 view : Model -> Html Msg
 view model =
-    StaticView.view
+    div [] []
 
 
 init : Model
