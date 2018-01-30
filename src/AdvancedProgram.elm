@@ -1,10 +1,13 @@
 module AdvancedProgram exposing (main)
 
 import Html exposing (..)
+import Http
+import Json.Decode
 
 
 type Msg
     = NoOp
+    | GotData (Result Http.Error Int)
 
 
 type alias Model =
@@ -18,13 +21,24 @@ view model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( 0, Cmd.none )
+    ( 0
+    , Http.get url Json.Decode.int |> Http.send GotData
+    )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         NoOp ->
+            ( model
+            , Http.get url Json.Decode.int |> Http.send GotData
+            )
+
+        GotData data ->
+            let
+                _ =
+                    Debug.log "got data" data
+            in
             ( model, Cmd.none )
 
 
