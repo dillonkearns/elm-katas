@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Elm Katas",
   "scripts": {
-    "start": "elm-live src/Main.elm --open --debug --output elm.js",
+    "start": "elm-live src/Main.elm --open --debug",
     "test": "elm-test",
     "test-watch": "elm-test --watch"
   },
@@ -12,7 +12,7 @@
   "author": "Dillon Kearns <dillon@dillonkearns.com>",
   "license": "MIT",
   "devDependencies": {
-    "elm-live": "^2.7.4",
+    "elm-live": "^2.7.5",
     "elm-test": "^0.18.12"
   }
 }

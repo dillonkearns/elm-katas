@@ -1,7 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
-import Tennis
+import StaticView
 
 
 type Msg
@@ -9,18 +9,17 @@ type Msg
 
 
 type alias Model =
-    Tennis.Game
+    Int
 
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ text (Tennis.scoreToString model) ]
+    StaticView.view
 
 
 init : Model
 init =
-    Tennis.init
+    0
 
 
 update : Msg -> Model -> Model
