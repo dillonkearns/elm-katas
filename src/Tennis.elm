@@ -2,26 +2,30 @@ module Tennis exposing (gameScoreToString, init, player1Scores, player2Scores)
 
 
 type alias Game =
-    ( Int, Int )
+    { player1Score : Int
+    , player2Score : Int
+    }
 
 
 init : Game
 init =
-    ( 0, 0 )
+    { player1Score = 0
+    , player2Score = 0
+    }
 
 
 player1Scores : Game -> Game
-player1Scores ( player1, player2 ) =
-    ( player1 + 1, player2 )
+player1Scores game =
+    { game | player1Score = game.player1Score + 1 }
 
 
 player2Scores : Game -> Game
-player2Scores ( player1, player2 ) =
-    ( player1, player2 + 1 )
+player2Scores game =
+    { game | player2Score = game.player2Score + 1 }
 
 
 gameScoreToString : Game -> String
-gameScoreToString (( player1Score, player2Score ) as game) =
+gameScoreToString ({ player1Score, player2Score } as game) =
     if isTiedScore game then
         tiedScoreToString player1Score
     else if isAdScore game then
@@ -46,7 +50,7 @@ tiedScoreToString tiedScore =
 
 
 isAdScore : Game -> Bool
-isAdScore ( player1Score, player2Score ) =
+isAdScore { player1Score, player2Score } =
     (max player1Score player2Score > 3)
         && (player2Score
                 - player1Score
@@ -56,7 +60,7 @@ isAdScore ( player1Score, player2Score ) =
 
 
 isTiedScore : Game -> Bool
-isTiedScore ( player1Score, player2Score ) =
+isTiedScore { player1Score, player2Score } =
     player1Score == player2Score
 
 
