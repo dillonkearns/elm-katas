@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import Browser exposing (sandbox)
 import Html exposing (..)
 import Tennis
 
@@ -30,10 +31,10 @@ update msg model =
             model
 
 
-main : Program Never Model Msg
+main : Program () Model Msg
 main =
-    Html.beginnerProgram
-        { model = init
+    Browser.sandbox
+        { init = init
         , update = update
         , view = view
         }
