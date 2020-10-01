@@ -19,4 +19,25 @@ suite =
                     |> Tennis.player1Scores
                     |> Tennis.scoreToString
                     |> Expect.equal "15-Love"
+        , test "player 2 scores" <|
+            \_ ->
+                Tennis.init
+                    |> Tennis.player2Scores
+                    |> Tennis.scoreToString
+                    |> Expect.equal "Love-15"
+        , test "player 1 and 2 score" <|
+            \_ ->
+                Tennis.init
+                    |> Tennis.player1Scores
+                    |> Tennis.player2Scores
+                    |> Tennis.scoreToString
+                    |> Expect.equal "15-All"
+        , test "player 1 scores twice and 2 score" <|
+            \_ ->
+                Tennis.init
+                    |> Tennis.player1Scores
+                    |> Tennis.player1Scores
+                    |> Tennis.player2Scores
+                    |> Tennis.scoreToString
+                    |> Expect.equal "30-15"
         ]
