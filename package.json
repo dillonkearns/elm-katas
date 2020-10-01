@@ -12,8 +12,9 @@
   "author": "Dillon Kearns <dillon@dillonkearns.com>",
   "license": "MIT",
   "devDependencies": {
+    "elm": "latest-0.19.1",
+    "elm-format": "^0.8.4",
     "elm-live": "^3.4.0",
-    "elm-test": "latest-0.19.1",
-    "elm": "latest-0.19.1"
+    "elm-test": "latest-0.19.1"
   }
 }
